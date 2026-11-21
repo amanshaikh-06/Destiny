@@ -1,0 +1,115 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <br />
+      <h3>Create a New Listing</h3>
+
+      <form
+        method="post"
+        action="/listings"
+        class="row g-3 mb-3"
+        data-bs-validate="valid"
+        data-bs-validate
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="title" class="for-label">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="listing[title]"
+            placeholder="Enter your property title"
+            class="form-control"
+            required
+          />
+          <div id="title" class="invalid-feedback">Title is required</div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="for-label">Description</label>
+          <textarea
+            id="description"
+            name="listing[description]"
+            rows="5"
+            cols="50"
+            placeholder="Enter about your property"
+            class="form-control"
+            required
+          ></textarea>
+          <div id="description" class="invalid-feedback">
+            Short Description is required
+          </div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="for-label">Image</label>
+          <input
+            type="text"
+            id="image"
+            name="listing[image][url]"
+            placeholder="Enter your property's Image/URL/Link"
+            class="form-control"
+          />
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 md:col-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              id="price"
+              name="listing[price]"
+              placeholder="Ex. 12000"
+              class="form-control"
+              required
+            />
+            <div id="price" class="invalid-feedback">
+              Valid Price must required
+            </div>
+            <div class="valid-feedback">checked ok!</div>
+          </div>
+
+          <div class="mb-3 md:col-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              id="country"
+              name="listing[country]"
+              placeholder="Ex. India"
+              class="form-control"
+              required
+            />
+            <div id="country" class="invalid-feedback">
+              Country name is required
+            </div>
+            <div class="valid-feedback">checked ok!</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="for-label">Location</label>
+          <input
+            type="text"
+            id="location"
+            name="listing[location]"
+            placeholder="Ex. Pune, Maharashtra"
+            class="form-control"
+            required
+          />
+          <div id="location" class="invalid-feedback">
+            Actual location must required
+          </div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+        <br />
+
+        <button type="submit" class="btn btn-dark add-btn mt-3">Add</button
+        ><br /><br />
+      </form>
+    </div>
+  </div>
+</body>

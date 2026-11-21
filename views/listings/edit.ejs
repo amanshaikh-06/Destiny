@@ -1,0 +1,124 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h2>Edit Listing</h2>
+
+      <form
+        method="post"
+        action="/listings/<%= listing._id %>?_method=PUT"
+        class="row g-3 mb-3"
+        data-bs-validate="valid"
+        data-bs-validate
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="listing[title]"
+            value="<%= listing.title %>"
+            placeholder="Enter your property title"
+            class="form-control"
+            required
+          />
+          <div id="title" class="invalid-feedback">Title is required</div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            id="description"
+            name="listing[description]"
+            rows="5"
+            placeholder="Enter about your property"
+            class="form-control"
+            required
+          >
+<%= listing.description %></textarea
+          >
+          <div id="title" class="invalid-feedback">
+            Short Description is required
+          </div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Image URL</label>
+          <input
+            type="text"
+            id="image"
+            name="listing[image]"
+            value="<%= listing.image.url %>"
+            placeholder="Enter your property image URL"
+            class="form-control"
+            required
+          />
+          <div id="title" class="invalid-feedback">
+            Img link / URL is required
+          </div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 md:col-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              id="price"
+              name="listing[price]"
+              value="<%= listing.price %>"
+              placeholder="Enter your amount"
+              class="form-control"
+              required
+            />
+            <div id="title" class="invalid-feedback">
+              Valid Amount is required
+            </div>
+            <div class="valid-feedback">checked ok!</div>
+          </div>
+
+          <div class="mb-3 md:col-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              id="country"
+              name="listing[country]"
+              value="<%= listing.country %>"
+              placeholder="Enter your country"
+              class="form-control"
+              required
+            />
+            <div id="title" class="invalid-feedback">
+              Valid Country name is required
+            </div>
+            <div class="valid-feedback">checked ok!</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            id="location"
+            name="listing[location]"
+            value="<%= listing.location %>"
+            placeholder="Enter your property location"
+            class="form-control"
+            required
+          />
+          <div id="title" class="invalid-feedback">
+            Actual Location is required
+          </div>
+          <div class="valid-feedback">checked ok!</div>
+        </div>
+
+        <button type="submit" class="btn btn-dark edit-btn mt-3">Update</button
+        ><br /><br />
+      </form>
+    </div>
+  </div>
+</div>
